@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const { BOT_TOKEN } = require('./config')
 
 const client = new Discord.Client();
-const BOT_CHANNEL_ID_KS = '742771191185408100'
+const BOT_CHANNEL_ID_KS = '742771191185408100' 
 const BOT_CHANNEL_ID_DEV = '261376661998534666'
 
 client.on("ready", () => {
