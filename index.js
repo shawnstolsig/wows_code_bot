@@ -1,21 +1,20 @@
 const Discord = require("discord.js");
-const { BOT_TOKEN } = require('./config')
+const dotenv = require("dotenv");
+dotenv.config();
 
-const client = new Discord.Client();
-const BOT_CHANNEL_ID_KS = '742771191185408100'
-const BOT_CHANNEL_ID_DEV = '261376661998534666'
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
 
 client.on("ready", () => {
   console.log("WG Code URL Bot is ready.");
 });
 
-client.on("message", (message) => {
+client.on("messageCreate", (message) => {
 
   // ignore messages from all bots
   if (message.author.bot) return;
 
   // ignore messages from all channels except for the specified bot channel
-  if (message.channel.id !== BOT_CHANNEL_ID_KS && message.channel.id !== BOT_CHANNEL_ID_DEV) return;
+  if (message.channel.id !== process.env.BOT_CHANNEL_ID_KS && message.channel.id !== process.env.BOT_CHANNEL_ID_DEV) return;
 
   // ignore messages that have more than 5 digits in a row, as these are probably just id numbers for emoji/reactions/etc
   let idRegex = /([0-9]{5,})/g
@@ -63,4 +62,4 @@ client.on("message", (message) => {
 
 });
 
-client.login(BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);

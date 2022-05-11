@@ -1,0 +1,23 @@
+{
+  "name": "wows_code_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawnstolsig/wows_code_bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shawnstolsig/wows_code_bot/issues"
+  },
+  "homepage": "https://github.com/shawnstolsig/wows_code_bot#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.1"
+  }
+}
